@@ -12,8 +12,9 @@
 
 ## Features
 
-- Configuration by object or `.well-know/openid-configuration`
+- Configuration by object or `.well-known/openid-configuration`
 - Full SSR compatible
+- JWT Tokens
 - Expiration/Refresh token
 
 ### Grant type support
@@ -32,13 +33,14 @@
     authorization_endpoint: 'http://auth.server/authorization',
     token_endpoint: 'http://auth.server/token'
     userinfo_endpoint: 'http://auth.server/userinfo'
-  }, // Object or 'http://auth.my.server/.well-know/openid-configuration'
+  }, // Object or 'http://auth.my.server/.well-known/openid-configuration'
   router: false // Auto add auth middleware to the router
 }
 ```
 
 ## How to use it
 If you want a great open source auth/IAM server : https://www.keycloak.org/ (This one is :fireworks:)
+/!\ Store need to be enable (See https://nuxtjs.org/guide/vuex-store/#activate-the-store) /!\
 ```js
 // TODO
 ```

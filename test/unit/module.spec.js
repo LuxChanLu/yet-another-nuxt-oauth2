@@ -1,20 +1,9 @@
 /* eslint-disable no-console */
 const fetchMock = require('fetch-mock')
-const { resolve } = require('path')
-const { Nuxt, Builder } = require('nuxt')
-
+const { buildNuxt } = require('../utils.js')
 
 describe('Module config', () => {
-  jest.setTimeout(30000) // Maybe find to do a faster nuxt build ?
-
-  const buildNuxt = async config => {
-    return new Builder(new Nuxt({
-      dev: true,
-      rootDir: resolve(__dirname, '..', 'fixtures', 'module'),
-      modules: [resolve(__dirname, '..', '..', 'lib', 'module.js')],
-      ...config
-    })).build()
-  }
+  jest.setTimeout(30000) // Maybe find a faster way to nuxt build ?
 
   it('should not init yano (Missing config)', async () => {
     console.warn = jest.fn()

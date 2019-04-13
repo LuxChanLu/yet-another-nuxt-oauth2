@@ -10,7 +10,10 @@
     "ci": "jest --watch",
     "test": "jest --coverage --forceExit",
     "lint": "eslint --ext=.js src test index.js",
-    "coverall": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "coverall": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:nuxt": "nuxt cypress/fixtures/nuxt"
   },
   "repository": {
     "type": "git",
@@ -39,14 +42,21 @@
   "dependencies": {
     "@types/jest": "^24.0.11",
     "fetch-mock": "^7.3.1",
+    "form-data": "^2.3.3",
+    "is-https": "^1.0.0",
     "isomorphic-fetch": "^2.2.1",
-    "nuxt": "^2.6.1"
+    "jsonwebtoken": "^8.5.1",
+    "nuxt": "^2.6.1",
+    "qs": "^6.7.0"
   },
   "devDependencies": {
     "coveralls": "^3.0.3",
+    "cypress": "^3.2.0",
     "eslint": "^5.16.0",
+    "eslint-plugin-cypress": "^2.2.1",
     "eslint-plugin-jest": "^22.4.1",
     "jest": "^24.7.1",
-    "jest-cli": "^24.7.1"
+    "jest-cli": "^24.7.1",
+    "oauth2-mock-server": "^1.2.0"
   }
 }
