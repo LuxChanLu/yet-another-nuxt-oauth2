@@ -3,6 +3,8 @@
 .eslintrc.js
 .travis.yml
 test/
+cypress/
+cypress.json
 
 .vs
 *~
