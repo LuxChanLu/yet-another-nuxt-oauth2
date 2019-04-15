@@ -13,9 +13,10 @@ module.exports = {
     grant: 'authorization_code',
     client: {
       id: 'id',
-      secret: 'secret',
+      secret: 'test',
       scope: 'email profile openid'
-    }
+    },
+    cache: 'redis://localhost/9'
   },
   modules: [resolve(__dirname, '..', '..', '..', 'lib', 'module.js')],
   hooks: {
