@@ -9,7 +9,7 @@
   "scripts": {
     "ci": "jest --watch",
     "test": "jest --coverage --forceExit",
-    "lint": "eslint --ext=.js src test index.js",
+    "lint": "eslint --ext=.js src test cypress",
     "coverall": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
@@ -20,8 +20,11 @@
     "url": "git+https://github.com/YourSoftRun/yet-another-nuxt-oauth2.git"
   },
   "keywords": [
-    "moleculer",
-    "sentry"
+    "nuxt",
+    "oauth2",
+    "ssr",
+    "refresh",
+    "openid"
   ],
   "author": "Hugo Meyronneinc <hugo@yoursoft.run>",
   "license": "MIT",
@@ -33,7 +36,12 @@
     "testEnvironment": "node",
     "coveragePathIgnorePatterns": [
       "/node_modules/",
-      "/test/"
+      "/test/",
+      "/cypress/"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/cypress/"
     ]
   },
   "engines": {
@@ -48,11 +56,11 @@
     "keyv": "^3.1.0",
     "node-fetch": "^2.3.0",
     "qs": "^6.7.0",
-    "url-search-params": "^1.1.0"
+    "@ungap/url-search-params": "^0.1.2"
   },
   "devDependencies": {
     "fetch-mock": "^7.3.1",
-    "nuxt": "^2.6.1",
+    "nuxt": "^2.6.2",
     "@types/jest": "^24.0.11",
     "coveralls": "^3.0.3",
     "cypress": "^3.2.0",

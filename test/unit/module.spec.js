@@ -27,7 +27,7 @@ describe('Module config', () => {
 
   it('should not init yano (With unsupported grant - via http autoconfigure)', async () => {
     console.warn = jest.fn()
-    fetchMock.get('http://this.is.not.a.server/auth', { authorization_endpoint: 'http://authorization', token_endpoint: 'http://token', userinfo_endpoint: 'http://userinfo', grant_types_supported: ['password'] })
+    fetchMock.get('http://this.is.not.a.server/auth/.well-known/openid-configuration', { authorization_endpoint: 'http://authorization', token_endpoint: 'http://token', userinfo_endpoint: 'http://userinfo', grant_types_supported: ['password'] })
     await buildNuxt({
       yano: {
         endpoints: 'http://this.is.not.a.server/auth',
@@ -51,8 +51,11 @@ describe('Module config', () => {
       }
     })
     expect(console.warn).not.toHaveBeenCalledTimes(1)
-    expect(plugins.length).toBe(1)
-    expect(plugins[0].src).toContain('middlewares')
+    expect(plugins.length).toBe(2)
+    expect(plugins[0].src).toContain('main')
+    expect(plugins[0].mode).toBe('all')
+    expect(plugins[1].src).toContain('server')
+    expect(plugins[1].mode).toBe('server')
   })
 
   it('should init yano with auto router', async () => {
