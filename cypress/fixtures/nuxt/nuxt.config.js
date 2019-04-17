@@ -9,14 +9,15 @@ module.exports = {
   },
   yano: {
     endpoints: 'http://localhost:3001',
-    router: true,
+    router: false,
     grant: 'authorization_code',
     client: {
       id: 'id',
       secret: 'test',
       scope: 'email profile openid'
     },
-    cache: 'redis://localhost/9'
+    cache: 'redis://localhost/9',
+    logout: '/logout'
   },
   modules: [resolve(__dirname, '..', '..', '..', 'lib', 'module.js')],
   hooks: {

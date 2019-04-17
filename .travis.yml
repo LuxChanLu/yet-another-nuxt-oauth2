@@ -11,8 +11,17 @@ cache:
   directories:
     - node_modules
 
+services:
+  - redis-server
+
 script:
   - npm test
+
+jobs:
+  include:
+    - stage: E2E
+      node_js: "11"
+      script: npm run cypress:run
 
 after_success:
   - npm run coverall
