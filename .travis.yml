@@ -21,7 +21,7 @@ jobs:
   include:
     - stage: E2E
       node_js: "11"
-      script: npm run cypress:run
+      script: npm run cypress:ci
 
 after_success:
   - npm run coverall
