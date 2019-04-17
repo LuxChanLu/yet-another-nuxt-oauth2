@@ -1,27 +1,6 @@
 <template>
   <div>
-    {{ $yano.accessToken() }}
-    <br/>
-    {{ new Date($yano.tokenExpiryAt()) }}
-    <br/>
-    <button v-if="!notice" @click="$yano.refreshToken()"> test </button>
+    <div>Hello, do you want do go to the magic world of logged users ?</div>
+    <nuxt-link to="/logged" data-cy="login">Hell yeah !</nuxt-link>
   </div>
 </template>
-
-<script>
-export default {
-  computed: {
-    notice() {
-      return this.$store.state.yano.notice
-    }
-  },
-  watch: {
-    notice(value) {
-      if (value)  {
-        alert("Token gonna expire !")
-      }
-    }
-  }
-}
-</script>
-

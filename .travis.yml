@@ -1,6 +1,9 @@
 language: node_js
-sudo: false
 dist: xenial
+addons:
+  apt:
+    packages:
+    - libgconf2-4
 
 node_js:
   - "11"
@@ -11,8 +14,17 @@ cache:
   directories:
     - node_modules
 
+services:
+  - redis-server
+
 script:
   - npm test
+
+jobs:
+  include:
+    - stage: E2E
+      node_js: "11"
+      script: npm run cypress:ci
 
 after_success:
   - npm run coverall
