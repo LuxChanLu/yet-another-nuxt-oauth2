@@ -2,13 +2,13 @@ module.exports = {
   root: true,
   env: {
     node: true,
-    browser: true,  
+    browser: true,
     commonjs: true,
     es6: true,
     jquery: false,
     jest: true,
     jasmine: true,
-    'cypress/globals': true  
+    'cypress/globals': true
   },
   extends: ['eslint:recommended', 'plugin:jest/recommended'],
   plugins: ['jest', 'cypress'],

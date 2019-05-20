@@ -16,8 +16,16 @@ module.exports = {
       secret: 'test',
       scope: 'email profile openid'
     },
+    routes: {
+      login: '/auth/login',
+      logout: '/auth/logout',
+      refresh: '/auth/refresh'
+    },
     cache: 'redis://localhost/9',
-    logout: '/logout'
+    logout: {
+      redirect: '/logout'
+    },
+    notice: 2000
   },
   modules: [resolve(__dirname, '..', '..', '..', 'lib', 'module.js')],
   hooks: {

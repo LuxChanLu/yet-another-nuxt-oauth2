@@ -12,10 +12,10 @@
 
 ## Features
 
-- Configuration by object or `.well-known/openid-configuration`
-- Full SSR compatible
-- JWT Tokens
-- Expiration/Refresh token
+  - Configuration by object or `.well-known/openid-configuration`
+  - Full SSR compatible
+  - JWT Tokens
+  - Expiration/Refresh token
 
 ### Grant type support
 
@@ -39,9 +39,11 @@
 ```
 
 ## How to use it
-If you want a great open source auth/IAM server : https://www.keycloak.org/ (This one is :fireworks:)
-/!\ Store need to be enable (See https://nuxtjs.org/guide/vuex-store/#activate-the-store) /!\
+
+If you want a great open source auth/IAM server : <https://www.keycloak.org/> (This one is :fireworks:)
+
+/!\ Store need to be enable (See <https://nuxtjs.org/guide/vuex-store/#activate-the-store>) /!\
+
 ```js
 // TODO
 ```
-

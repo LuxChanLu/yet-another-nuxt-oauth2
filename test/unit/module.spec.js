@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-const fetchMock = require('fetch-mock')
 const { buildNuxt } = require('../utils.js')
 
 describe('Module config', () => {
@@ -25,19 +24,6 @@ describe('Module config', () => {
     expect(console.warn).toHaveBeenCalledWith('[YANO] Wrong oauth2 configuration (Mandatory : authorization_endpoint, token_endpoint, userinfo_endpoint or unsupported grant type)')
   })
 
-  it('should not init yano (With unsupported grant - via http autoconfigure)', async () => {
-    console.warn = jest.fn()
-    fetchMock.get('http://this.is.not.a.server/auth/.well-known/openid-configuration', { authorization_endpoint: 'http://authorization', token_endpoint: 'http://token', userinfo_endpoint: 'http://userinfo', grant_types_supported: ['password'] })
-    await buildNuxt({
-      yano: {
-        endpoints: 'http://this.is.not.a.server/auth',
-        grant: 'implicit'
-      }
-    })
-    expect(console.warn).toHaveBeenCalledTimes(1)
-    expect(console.warn).toHaveBeenCalledWith('[YANO] Wrong oauth2 configuration (Mandatory : authorization_endpoint, token_endpoint, userinfo_endpoint or unsupported grant type)')
-  })
-
   it('should init yano', async () => {
     console.warn = jest.fn()
     const { plugins } = await buildNuxt({
@@ -51,11 +37,9 @@ describe('Module config', () => {
       }
     })
     expect(console.warn).not.toHaveBeenCalledTimes(1)
-    expect(plugins.length).toBe(2)
-    expect(plugins[0].src).toContain('main')
+    expect(plugins).toHaveLength(1)
+    expect(plugins[0].src).toContain('plugin')
     expect(plugins[0].mode).toBe('all')
-    expect(plugins[1].src).toContain('server')
-    expect(plugins[1].mode).toBe('server')
   })
 
   it('should init yano with auto router', async () => {
@@ -74,7 +58,7 @@ describe('Module config', () => {
     expect(console.warn).not.toHaveBeenCalledTimes(1)
     expect(nuxt.options.router).toBeDefined()
     expect(nuxt.options.router.middleware).toBeDefined()
-    expect(nuxt.options.router.middleware.length).toBe(1)
+    expect(nuxt.options.router.middleware).toHaveLength(1)
     expect(nuxt.options.router.middleware[0]).toBe('auth')
   })
 })
