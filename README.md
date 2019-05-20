@@ -1,7 +1,7 @@
 # YANO : Yet another nuxt oauth2 module
 
 [![Build Status](https://travis-ci.org/YourSoftRun/yet-another-nuxt-oauth2.svg?branch=master)](https://travis-ci.org/YourSoftRun/yet-another-nuxt-oauth2)
-[![Coverage Status](https://coveralls.io/repos/github/YourSoftRun/yet-another-nuxt-oauth2/badge.svg?branch=master)](https://coveralls.io/github/YourSoftRun/yet-another-nuxt-oauth2?branch=master)
+<!-- [![Coverage Status](https://coveralls.io/repos/github/YourSoftRun/yet-another-nuxt-oauth2/badge.svg?branch=master)](https://coveralls.io/github/YourSoftRun/yet-another-nuxt-oauth2?branch=master) -->
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/683d1198ec0e4c50a2b0c58174244d5e)](https://www.codacy.com/app/Hugome/yet-another-nuxt-oauth2?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=YourSoftRun/yet-another-nuxt-oauth2&amp;utm_campaign=Badge_Grade)
 [![Maintainability](https://api.codeclimate.com/v1/badges/2f19318b8b78081f0506/maintainability)](https://codeclimate.com/github/YourSoftRun/yet-another-nuxt-oauth2/maintainability)
 [![David](https://img.shields.io/david/YourSoftRun/yet-another-nuxt-oauth2.svg)](https://david-dm.org/YourSoftRun/yet-another-nuxt-oauth2)
