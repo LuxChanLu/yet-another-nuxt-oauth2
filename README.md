@@ -12,10 +12,10 @@
 
 ## Features
 
-  - Configuration by object or `.well-known/openid-configuration`
-  - Full SSR compatible
-  - JWT Tokens
-  - Expiration/Refresh token
+- Configuration by object or `.well-known/openid-configuration`
+- Full SSR compatible
+- JWT Tokens
+- Expiration/Refresh token
 
 ### Grant type support
 
