@@ -1,6 +1,6 @@
 {
   "name": "yet-another-nuxt-oauth2",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Nuxt OAuth2 module",
   "main": "lib/module.js",
   "directories": {
