@@ -17,7 +17,7 @@ context('Auth flow', () => {
     cy.get('span[data-cy="token-scope"]').should('be.visible').should('contain', 'dummy')
 
     // eslint-disable-next-line jest/valid-expect
-    cy.tick(3000 * 1000).tick(598 * 1000).wait(1000).then(() => expect(stub.getCall(0)).to.be.calledWith('Token gonna expire !'))
+    cy.tick(3599 * 1000).wait(1000).then(() => expect(stub.getCall(0)).to.be.calledWith('Token gonna expire !'))
 
 
     cy.reload()
@@ -42,7 +42,7 @@ context('Auth flow', () => {
     cy.get('span[data-cy="token-sub"]').should('be.visible').should('contain', 'johndoe')
     cy.get('span[data-cy="token-scope"]').should('be.visible').should('contain', 'dummy')
 
-    cy.tick(3000 * 1000).tick(598 * 1000).wait(1000)
+    cy.tick(3598 * 1000).wait(1000)
 
     cy.get('button[data-cy="token-refresh"]').should('be.visible').click().tick(500).wait(500)
     cy.get('button[data-cy="token-refresh"]').should('not.be.visible')
