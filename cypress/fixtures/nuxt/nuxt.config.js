@@ -19,7 +19,8 @@ module.exports = {
     routes: {
       login: '/auth/login',
       logout: '/auth/logout',
-      refresh: '/auth/refresh'
+      refresh: '/auth/refresh',
+      clear: true
     },
     cache: 'redis://localhost/9',
     logout: {
