@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "@ungap/url-search-params": "^0.1.2",
-    "assign-deep": "^1.0.0",
+    "assign-deep": "^1.0.1",
     "cookie-universal": "^2.0.14",
     "is-https": "^1.0.0",
     "jsonwebtoken": "^8.5.1",
