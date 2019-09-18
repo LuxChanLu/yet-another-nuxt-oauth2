@@ -11,19 +11,6 @@ describe('Module config', () => {
     expect(console.warn).toHaveBeenCalledWith('[YANO] No oauth2 configuration endpoint (Or configuration object)')
   })
 
-  it('should not init yano (With wrong inline object config)', async () => {
-    console.warn = jest.fn()
-    await buildNuxt({
-      yano: {
-        endpoints: {
-          missing_endpoint: 'not'
-        }
-      }
-    })
-    expect(console.warn).toHaveBeenCalledTimes(1)
-    expect(console.warn).toHaveBeenCalledWith('[YANO] Wrong oauth2 configuration (Mandatory : authorization_endpoint, token_endpoint, userinfo_endpoint or unsupported grant type)')
-  })
-
   it('should init yano', async () => {
     console.warn = jest.fn()
     const { plugins } = await buildNuxt({
@@ -33,6 +20,24 @@ describe('Module config', () => {
           token_endpoint: 'http://token',
           userinfo_endpoint: 'http://userinfo'
         },
+        grant: 'implicit'
+      }
+    })
+    expect(console.warn).not.toHaveBeenCalledTimes(1)
+    expect(plugins).toHaveLength(1)
+    expect(plugins[0].src).toContain('plugin')
+    expect(plugins[0].mode).toBe('all')
+  })
+
+  it('should init yano with function', async () => {
+    console.warn = jest.fn()
+    const { plugins } = await buildNuxt({
+      yano: {
+        endpoints: () => ({
+          authorization_endpoint: 'http://authorization',
+          token_endpoint: 'http://token',
+          userinfo_endpoint: 'http://userinfo'
+        }),
         grant: 'implicit'
       }
     })
