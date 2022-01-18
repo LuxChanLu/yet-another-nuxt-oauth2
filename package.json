@@ -55,7 +55,7 @@
     "is-https": "^1.0.0",
     "jsonwebtoken": "^8.5.1",
     "keyv": "^3.1.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.7",
     "qs": "^6.8.0"
   },
   "devDependencies": {
