@@ -53,7 +53,7 @@
     "assign-deep": "^1.0.1",
     "cookie-universal": "^2.0.16",
     "is-https": "^1.0.0",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "keyv": "^3.1.0",
     "node-fetch": "^2.6.0",
     "qs": "^6.8.0"
